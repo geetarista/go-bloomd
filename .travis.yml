@@ -1,3 +1,11 @@
 language: go
+before_install:
+  - sudo apt-get -y install scons
+  - git clone https://github.com/armon/bloomd
+  - cd bloomd
+  - scons
+  - echo -e "[bloomd]\ndata_dir=/home/vagrant\nflush_interval=60000\nport=8673\nworkers=1\nlog_level=debug" > bloomd.conf
+  - bloomd -f bloomd.conf &
+  - cd ..
 install: cd bloomd && go get -d -v && go build -v
 script: go test
