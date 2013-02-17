@@ -5,7 +5,7 @@ import (
 )
 
 var (
-	serverHost = "172.16.35.129"
+	serverHost = "127.0.0.1"
 	serverPort = "8673"
 	serverAddress = serverHost + ":" + serverPort
 	dummyFilter = Filter{Name: "asdf"}
