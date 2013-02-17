@@ -15,7 +15,7 @@ go get github.com/geetarista/go-bloomd/bloomd
 Or read it locally:
 
 ```bash
-go doc github.com/geetarista/go-bloomd
+go doc github.com/geetarista/go-bloomd/bloomd
 ```
 
 ## Testing
