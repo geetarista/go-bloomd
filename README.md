@@ -10,7 +10,7 @@ go get github.com/geetarista/go-bloomd/bloomd
 
 ## Documentation
 
-[Read it online](http://godoc.org/github.com/geetarista/go-bloomd)
+[Read it online](http://godoc.org/github.com/geetarista/go-bloomd/bloomd)
 
 Or read it locally:
 
