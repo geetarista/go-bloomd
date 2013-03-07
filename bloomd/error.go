@@ -18,7 +18,7 @@ func errInvalidResponse(resp string) error {
 
 func errCommandFailed(cmd, attempt string) error {
 	return &BloomdError{
-		ErrorString: "Failed to send command to bloombd server: " + cmd + ". Attempt: " + attempt,
+		ErrorString: "Failed to send command to bloomd server: " + cmd + ". Attempt: " + attempt,
 	}
 }
 
