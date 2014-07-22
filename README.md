@@ -1,4 +1,4 @@
-# go-bloomd ![Build Status](https://travis-ci.org/geetarista/go-bloomd.png)
+# go-bloomd [![Build Status](https://drone.io/github.com/geetarista/go-bloomd/status.png)](https://drone.io/github.com/geetarista/go-bloomd/latest) [![GoDoc](https://godoc.org/github.com/geetarista/go-bloomd/bloomd?status.svg)](https://godoc.org/github.com/geetarista/go-bloomd/bloomd)
 
 A [bloomd](https://github.com/armon/bloomd) client powered by [Go](http://golang.org).
 
@@ -6,16 +6,6 @@ A [bloomd](https://github.com/armon/bloomd) client powered by [Go](http://golang
 
 ```bash
 go get github.com/geetarista/go-bloomd/bloomd
-```
-
-## Documentation
-
-[Read it online](http://godoc.org/github.com/geetarista/go-bloomd/bloomd)
-
-Or read it locally:
-
-```bash
-go doc github.com/geetarista/go-bloomd/bloomd
 ```
 
 ## Testing
