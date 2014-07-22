@@ -33,7 +33,9 @@ func NewClient(address string) Client {
 }
 
 func (c *Client) CreateFilter(f *Filter) error {
-	if f.Prob > 0 && f.Capacity < 1 { return errInvalidCapacity }
+	if f.Prob > 0 && f.Capacity < 1 {
+		return errInvalidCapacity
+	}
 
 	cmd := "create " + f.Name
 	if f.Capacity > 0 {
@@ -64,8 +66,8 @@ func (c *Client) CreateFilter(f *Filter) error {
 
 func (c *Client) GetFilter(name string) *Filter {
 	return &Filter{
-		Name: name,
-		Conn: c.Conn,
+		Name:     name,
+		Conn:     c.Conn,
 		HashKeys: c.HashKeys,
 	}
 }

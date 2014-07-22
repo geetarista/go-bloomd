@@ -8,7 +8,6 @@ import (
 // Clear everything out of bloomd before running tests.
 func TestDropEverything(t *testing.T) {
 	client := NewClient(serverAddress)
-	defer client.Conn.Socket.Close()
 	filters, _ := client.ListFilters()
 	for f, _ := range filters {
 		filter := Filter{Name: f, Conn: client.Conn}
@@ -18,7 +17,6 @@ func TestDropEverything(t *testing.T) {
 
 func TestCreateFilter(t *testing.T) {
 	client := NewClient(serverAddress)
-	defer client.Conn.Socket.Close()
 	err := client.CreateFilter(&validFilter)
 	failIfError(t, err)
 	err = client.CreateFilter(&anotherFilter)
@@ -27,7 +25,6 @@ func TestCreateFilter(t *testing.T) {
 
 func TestGetFilter(t *testing.T) {
 	client := NewClient(serverAddress)
-	defer client.Conn.Socket.Close()
 	filter := client.GetFilter(validFilter.Name)
 	if filter.Name != validFilter.Name {
 		t.Error("Name not equal")
@@ -39,7 +36,6 @@ func TestGetFilter(t *testing.T) {
 
 func TestListFilters(t *testing.T) {
 	client := NewClient(serverAddress)
-	defer client.Conn.Socket.Close()
 	filters, err := client.ListFilters()
 	failIfError(t, err)
 	if filters[validFilter.Name] == "" {
@@ -50,7 +46,6 @@ func TestListFilters(t *testing.T) {
 
 func TestClientFlush(t *testing.T) {
 	client := NewClient(serverAddress)
-	defer client.Conn.Socket.Close()
 	err := client.Flush()
 	failIfError(t, err)
 }

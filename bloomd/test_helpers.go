@@ -5,14 +5,14 @@ import (
 )
 
 var (
-	serverHost = "127.0.0.1"
-	serverPort = "8673"
+	serverHost    = "127.0.0.1"
+	serverPort    = "8673"
 	serverAddress = serverHost + ":" + serverPort
-	dummyFilter = Filter{Name: "asdf"}
-	validFilter = Filter{
-		Name: "thing",
+	dummyFilter   = Filter{Name: "asdf"}
+	validFilter   = Filter{
+		Name:     "thing",
 		InMemory: true,
-		Conn: &Connection{Server: serverAddress},
+		Conn:     &Connection{Server: serverAddress},
 	}
 	anotherFilter = Filter{
 		Name: "another",
