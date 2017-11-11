@@ -2,13 +2,28 @@
 Provides a client abstraction around the BloomD interface.
 
 Example:
-	client := bloomd.Client{Server: "10.0.0.30:8673"}
-	filter := bloomd.Filter{Name: "coolfilter"}
-	if err := bloomd.CreateFilter(filter); err != nil {
-		// handle error
+	client := bloomd.NewClient("127.0.0.1:8673")
+
+	filters, err := client.ListFilters()
+	if err != nil {
+		panic(err)
 	}
-	filters, _ := bloomd.ListFilters()
-	fmt.Printf("%+v", filters["coolfilter"])
+	fmt.Printf("%+v\n", filters)
+
+	filter := client.GetFilter("coolfilter")
+	if err := client.CreateFilter(filter); err != nil {
+		panic(err)
+	}
+
+	if _, err := filter.Set("milkshake"); err != nil {
+		panic(err)
+	}
+
+	res, err := filter.Multi([]string{"milkshake", "apfelschorle"})
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("%+v\n", res)
 */
 package bloomd
 
